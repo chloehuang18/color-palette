@@ -1,7 +1,91 @@
 body{
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
-    width: 100%;
+    box-sizing: border-box;
+}
+
+#container{
+    min-height: 100vh;
+    align-items: center;
+}
+
+.header1{
+    height: 8vh;
+    background-color: white;
+    align-items: center;
+}
+
+
+.top{
+    height: 80vh;
+}
+
+.middle{
+    height: 100vh;
+    background-color: black;
+    color: blanchedalmond;
+}
+
+.rgbpalette {
+    height: 400px;
+    width: 300px;
+    align-items: center;
+    background-color:burlywood;
+    border-radius: 10px;
+    display: grid;
     place-items: center;
+    color: black;
+    font-family:  Calibri;
+
+}
+
+#box{
+    height: 40px;
+    width: 80%;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    text-align: center;
+}
+
+input[type="range"]{
+    -webkit-appearance: none;
+    height: 10px;
+    width: 80%;
+    border-radius: 50px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* .rgbpalette #red{
+    background: linear-gradient(to right, rgba(255,0,0,1), rgba(255,0,0,0) );
+}
+
+.rgbpalette #green{
+    background: linear-gradient(to right, rgba(0,255,0,1), rgba(255,0,0,0) );
+}
+
+.rgbpalette #blue{
+    background: linear-gradient(to right, rgba(0,0,255,1), rgba(255,0,0,0) );
+} */
+
+
+.rgbpalette #red{
+    background: linear-gradient(90deg, #000, red, white );
+}
+
+.rgbpalette #green{
+    background: linear-gradient( 90deg, #000, green, white);
+}
+
+.rgbpalette #blue{
+    background: linear-gradient( 90deg, #000, blue, white);
 }

@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="color.css">
     <title>Color Palette Tester</title>
+
+
 </head>
 <body>
+    <div id = container>
+        <div class="header1">
+            <h1>RBG Background Color Test</h1>
+        </div>
+        <div class="top">
+            <div class="rgbpalette">
+                RBG: <input type="text" id="box" value="rgb(255,255,255)">
+                Red: <input type="range" id="red" value="255" min="0" max="255">
+                Green: <input type="range" id="green" value="255" min="0" max="255">
+                Blue: <input type="range" id="blue" value="255" min="0" max="255">
+            </div>
+        </div>
+        <div class="middle">
+            <h1>My Color Palette</h1>
+        </div>
+        <div class="bottom">
+
+        </div>
+    </div>
     
+    <script type="text/javascript">
+        function myColor(){
+            var red = document.getElementById('red').value;
+            var green = document.getElementById('green').value;
+            var blue = document.getElementById('blue').value;
+            var color = 'rgb('+ red +','+ green +','+ blue +')';
+
+            document.body.style.backgroundColor = color;
+            document.getElementById('box').value = color;
+        }
+        document.getElementById('red').addEventListener('input', myColor);
+        document.getElementById('green').addEventListener('input', myColor);
+        document.getElementById('blue').addEventListener('input', myColor);
+
+    </script>
 </body>
 </html>
