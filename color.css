@@ -129,6 +129,11 @@ input.radio{
     margin: 5px;
 }
 
+
+.midarea{
+    width: 83vw; height: 20em;
+}
+
 .color-picker .midarea{
     background-color: rgb(255, 255, 255);
     float: flex;
@@ -213,58 +218,58 @@ label span {
     transition: transform 0.2s ease-in-out;
 }
 label span.red-2 {
-    background: #db2828;
+    background: hsl(0, 71%, 51%);
 }
 label span.orange {
-    background: #f2711c;
+    background: hsl(24, 89%, 53%);
 }
 label span.yellow {
-    background: #fbbd08;
+    background: hsl(45, 97%, 51%);
 }
 
 label span.yellow-light {
-    background: #FFEB3B;
+    background: hsl(54, 100%, 62%);
 }
 
 label span.green-light {
-    background: #CDDC39;
+    background: hsl(66, 70%, 54%);
 }
 
 label span.teal {
-    background: #009688;
+    background: hsl(174, 100%, 29%);
 }
 label span.green-2 {
-    background: #21ba45;
+    background: hsl(134, 70%, 43%);
 }
 label span.teal {
-    background: #00b5ad;
+    background: hsl(177, 100%, 35%);
 }
 label span.blue-light {
-    background: #03A9F4;
+    background: hsl(199, 98%, 48%);
 }
 label span.blue-2 {
-    background: #2185d0;
+    background: hsl(206, 73%, 47%);
 }
 label span.indigo {
-    background: #3F51B5;
+    background: hsl(231, 48%, 48%);
 }
 label span.violet {
-    background: #6435c9;
+    background: hsl(259, 58%, 50%);
 }
 label span.purple {
-    background: #a333c8;
+    background: hsl(285, 59%, 49%);
 }
 label span.pink {
-    background: #e03997;
+    background: hsl(326, 73%, 55%);
 }
 label span.brown {
-    background: #795548;
+    background: hsl(16, 25%, 38%);
 }
 label span.grey {
-    background: #9E9E9E;
+    background: hsl(0, 0%, 62%);
 }
 label span.grey-blue {
-    background: #607D8B;
+    background: hsl(200, 18%, 46%);
 }
 
 table, th, td {
@@ -273,4 +278,24 @@ table, th, td {
     align-items: center;
   }
 
+
+ :root {
+     --c:hsl(0, 73%, 41%);
+     --c:hsl(14, 88%, 40%);
+     --c:hsl(21, 100%, 45%);
+     --c:hsl(28, 92%, 53%);
+     --c:hsl(54, 70%, 30%);
+     --c:hsl(103, 56%, 26%);
+     --c:hsl(170, 100%, 15%);
+     --c:hsl(182, 100%, 20%);
+     --c:hsl(216, 85%, 34%);
+     --c:hsl(235, 66%, 30%);
+     --c:hsl(251, 69%, 34%);
+     --c:hsl(328, 81%, 29%);
+     --c:hsl(9, 28%, 19%);
+     --c:hsl(0, 0%, 13%);
+     --c:hsl(200, 19%, 18%);
+
+
+ }
 
