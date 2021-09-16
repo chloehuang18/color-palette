@@ -114,7 +114,7 @@ input[type="range"]::-webkit-slider-thumb{
         
 }
 
-.color-picker .toparea{
+.toparea{
     background-color: white;
     overflow: hidden;
     display: flex;
