@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 #container{
@@ -228,7 +229,7 @@ label span.yellow {
 }
 
 label span.yellow-light {
-    background: hsl(54, 100%, 62%);
+    background: #ffec3d;
 }
 
 label span.green-light {
@@ -279,5 +280,35 @@ table, th, td {
   }
 
 
+ :root {
+     --c:#b51c1c;
+     --c:#c0360c;
+     --c:#e65000;
+     --c:#F57F17;
+     --c:#827717;
+     --c:#33691E;
+     --c:#004d40;
+     --c:#006366;
+     --c:hsl(216, 85%, 34%);
+    
+     --c:#1a227f;
+     --c:hsl(287, 72%, 40%);
+     --c:#311b93;
+     --c:#860e4e;
+     --c:#3e2723;
+     --c:#212121;
+     --c:#253137;
 
+ }
+
+
+ .listOfBtns{
+     display: flex;  
+
+ }
+
+[class|="clr"]{
+     height: 50px; width: 50px;
+     outline: 1px solid #000;
+ }
 
