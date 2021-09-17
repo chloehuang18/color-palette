@@ -1,6 +1,9 @@
 # Color Palette Project
 Please visit: https://chloehuang18.github.io/color-palette/
 
+* Project Name : Color Palette
+* Tools : HTML, CSS, JavaScript
+* Description : This is a web application that helps you pick the color codes.
 
 I love colors! Colors make things beautiful and give you different feelings and messages. I have some knowledge of the color theory but I can't remember each color code. Whenever I did a web project, I always spent a good amount of time finding the right color, because I want to make sure my web pages look professional and neat. 
 Finding the right colors for web pages plays a key role in the entire process.
