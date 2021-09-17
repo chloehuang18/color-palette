@@ -22,50 +22,42 @@
         </div>
         <div class="header1">
             <h1>My Color Palette</h1>
+        </div>        
+        <div class="listOfBtns">
+            <div class="clr-01 transform" data-hue="355" data-sat="93"  data-lum="46.5"></div>
+            <div class="clr-02 transform" data-hue="19" data-sat="87" data-lum="50"></div>
+            <div class="clr-03 transform" data-hue="42" data-sat="93" data-lum="50"></div>
+            <div class="clr-04 transform" data-hue="55" data-sat="100" data-lum="53"></div>
+            <div class="clr-05 transform" data-hue="65" data-sat="100" data-lum="43"></div>
+            <div class="clr-06 transform" data-hue="131" data-sat="93" data-lum="37"></div>
+            <div class="clr-07 transform" data-hue="156" data-sat="100" data-lum="50"></div>
+            <div class="clr-08 transform" data-hue="198" data-sat="100" data-lum="48"></div>
+            <div class="clr-09 transform" data-hue="202" data-sat="100" data-lum="41"></div>
+            <div class="clr-16 transform" data-hue="229" data-sat="69" data-lum="36"></div>
+            <div class="clr-10 transform" data-hue="259" data-sat="72" data-lum="40"></div>
+            <div class="clr-11 transform" data-hue="287" data-sat="72" data-lum="40"></div>
+            <div class="clr-12 transform" data-hue="327" data-sat="82" data-lum="47"></div>
+            <div class="clr-13 transform" data-hue="15" data-sat="45" data-lum="24"></div>
+            <div class="clr-14 transform" data-hue="126" data-sat="0" data-lum="30"></div>
+            <div class="clr-15 transform" data-hue="197" data-sat="36" data-lum="27"></div>
         </div>
-        <div class="color-palette">
-            <div class="color-picker">
-                <div class="listOfBtns">
-                    <div class="clr-01" data-hue="0" data-sat="73"  data-lum="41"></div>
-                    <div class="clr-02" data-hue="14" data-sat="88" data-lum="40"></div>
-                    <div class="clr-03" data-hue="21" data-sat="100" data-lum="45"></div>
-                    <div class="clr-04" data-hue="28" data-sat="92" data-lum="53"></div>
-                    <div class="clr-05" data-hue="54" data-sat="70" data-lum="30"></div>
-                    <div class="clr-06" data-hue="103" data-sat="56" data-lum="26"></div>
-                    <div class="clr-07" data-hue="170" data-sat="100" data-lum="15"></div>
-                    <div class="clr-08" data-hue="182" data-sat="100" data-lum="20"></div>
-                    <div class="clr-09" data-hue="216" data-sat="85" data-lum="34"></div>
-                    <div class="clr-16" data-hue="287" data-sat="72" data-lum="40"></div>
-                    <div class="clr-10" data-hue="235" data-sat="66" data-lum="30"></div>
-                    <div class="clr-11" data-hue="251" data-sat="69" data-lum="34"></div>
-                    <div class="clr-12" data-hue="328" data-sat="81" data-lum="29"></div>
-                    <div class="clr-13" data-hue="9" data-sat="28" data-lum="19"></div>
-                    <div class="clr-14" data-hue="0" data-sat="0" data-lum="13"></div>
-                    <div class="clr-15" data-hue="200" data-sat="19" data-lum="18"></div>
-                </div>
-                <div class="colorList">
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                    <div class="colorSample"></div>
-                </div>
-                <div class="bottomarea">
-                    <p>Coming soon....</p>
-                </div>
-
-            </div>     
+        <div class="colorList">
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+        </div>
+        <div class="bottomarea">
+            <p>Click to Copy the hsl</p>
+        </div>        
+        <div class="bottomarea">
+            <p>Coming soon....</p>
         </div>
             
     </div>
@@ -88,15 +80,34 @@
     </script>
 
     <script>
+        var holdlum = 95;
+        function sample(event){
+            // console.log(event);
+            // console.log(`event.dataset.hue ${event.target.dataset.hue}`);
+            let clr = event.target.dataset.hue;
+            let sat = event.target.dataset.sat;
+            // console.log(`clr: $[clr]`);
+            let colorList = document.querySelectorAll('.colorSample');
+            // console.log(colorList);
+            colorList.forEach(elem => { 
+                elem.style = `background-color: hsl(${clr}, ${sat}%, ${holdlum}%);`;
+                elem.innerHTML = `hsl(${sat}, ${sat}%, ${holdlum}%)`
+                holdlum -= 6;
+                if(holdlum < 1) {holdlum = 95;}
+            });
+            holdlum = 95;
+
+        }
+
         function addEvent(){
             let colorBtns = document.querySelectorAll('[class|="clr"]');
-            console.log(colorBtns);
+            // console.log(colorBtns);
             colorBtns.forEach(btn =>{
-                let clr = btn.dataset.hue;
+                let hue = btn.dataset.hue;
                 let sat = btn.dataset.sat;
                 let lum = btn.dataset.lum;
-                btn.style = 'background-color: hsl($(hue), $(sat)%, $(lum)%);';
-                //btn.addEventListener('click', sample);
+                btn.style = `background-color: hsl(${hue}, ${sat}%, ${lum}%);`;
+                btn.addEventListener('click', sample);
 
             });
         }

@@ -102,182 +102,18 @@ input[type="range"]::-webkit-slider-thumb{
     height: 85vh;
 }
 
-.color-picker{
-    display: grid;
-    width: 85vw;
-    height: 75vw;
-    grid-template-rows: 50px 2.5fr 5fr;
-    margin: 0 auto;
-    background-color: white;
-    border: 3px solid #8dc7e4;
-    border-radius: 0.5em;
-    box-shadow: 0 1em 8em rgba(black, 0.35);
-        
-}
-
-.color-picker .toparea{
+÷
+/* .color-picker .toparea{
     background-color: white;
     overflow: hidden;
     display: flex;
     margin: 15px;
     clear: none;
-}
-
-input[type=radio],
-input.radio{
-    float: flex;
-    clear: none;
-    margin: 5px;
-}
+} */
 
 
-.midarea{
-    width: 83vw; height: 20em;
-}
-
-.color-picker .midarea{
-    background-color: rgb(255, 255, 255);
-    float: flex;
-    margin: 10px;
-}
-
-.color-picker .bottomarea{
-    background-color: peru;
-
-}
-
-input[type="radio"] {
-    display: none;
-}
-input[type="radio"]:checked + label span {
-    transform: scale(1.5) translateY(9px);
-}
-input[type="radio"]:checked + label .red-2 {
-    border: 2px solid #db2828;
-}
-input[type="radio"]:checked + label .orange {
-    border: 2px solid #f2711c;
-}
-input[type="radio"]:checked + label .yellow {
-    border: 2px solid #fbbd08;
-}
-input[type="radio"]:checked + label .yellow-light {
-    border: 2px solid #FFEB3B;
-}
-input[type="radio"]:checked + label .green-light {
-    border: 2px solid #CDDC39;
-}
-input[type="radio"]:checked + label .green-2 {
-    border: 2px solid #21ba45;
-}
-input[type="radio"]:checked + label .teal {
-    border: 2px solid #00b5ad;
-}
-input[type="radio"]:checked + label .blue-light {
-    border: 2px solid #03A9F4;
-} 
-input[type="radio"]:checked + label .blue-2 {
-    border: 2px solid #2185d0;
-}
-input[type="radio"]:checked + label .indigo {
-    border: 2px solid #3F51B5;
-}
-input[type="radio"]:checked + label .violet {
-    border: 2px solid #6435c9;
-}
-input[type="radio"]:checked + label .purple {
-    border: 2px solid #a333c8;
-}
-input[type="radio"]:checked + label .pink {
-    border: 2px solid #e03997;
-}
-input[type="radio"]:checked + label .brown {
-    border: 2px solid #795548;
-}
-input[type="radio"]:checked + label .grey {
-    border: 2px solid #9E9E9E;
-}
-input[type="radio"]:checked + label .grey-blue {
-    border: 2px solid #607D8B;
-}
 
 
-label {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    margin-right: 15px;
-    cursor: pointer;
-}
-label:hover span {
-    transform: scale(1.15);
-}
-label span {
-    display: block;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.2s ease-in-out;
-}
-label span.red-2 {
-    background: hsl(0, 71%, 51%);
-}
-label span.orange {
-    background: hsl(24, 89%, 53%);
-}
-label span.yellow {
-    background: hsl(45, 97%, 51%);
-}
-
-label span.yellow-light {
-    background: #ffec3d;
-}
-
-label span.green-light {
-    background: hsl(66, 70%, 54%);
-}
-
-label span.teal {
-    background: hsl(174, 100%, 29%);
-}
-label span.green-2 {
-    background: hsl(134, 70%, 43%);
-}
-label span.teal {
-    background: hsl(177, 100%, 35%);
-}
-label span.blue-light {
-    background: hsl(199, 98%, 48%);
-}
-label span.blue-2 {
-    background: hsl(206, 73%, 47%);
-}
-label span.indigo {
-    background: hsl(231, 48%, 48%);
-}
-label span.violet {
-    background: hsl(259, 58%, 50%);
-}
-label span.purple {
-    background: hsl(285, 59%, 49%);
-}
-label span.pink {
-    background: hsl(326, 73%, 55%);
-}
-label span.brown {
-    background: hsl(16, 25%, 38%);
-}
-label span.grey {
-    background: hsl(0, 0%, 62%);
-}
-label span.grey-blue {
-    background: hsl(200, 18%, 46%);
-}
-
-table, th, td {
-    border: 1px solid white;
-    border-collapse: collapse;
-    align-items: center;
-  }
 
 
  :root {
@@ -310,5 +146,34 @@ table, th, td {
 [class|="clr"]{
      height: 50px; width: 50px;
      outline: 1px solid #000;
+ }
+
+.colorList{
+    display: flex;
+}
+
+ .colorSample {
+     height: 180px; width: 80px;
+     outline: 1px solid #000;
+     display: flex;
+     align-items: center;
+     font-family: Arial, Helvetica, sans-serif;
+     margin-top: 20px;
+     padding-top: 40px;
+     writing-mode: vertical-rl;
+     text-shadow: 2px darkgray;
+ }
+
+ .transform{
+    -webkit-transition: 2s ease;  
+    -moz-transition: all 2s ease;
+    -o-transition: all 2s ease;  
+    -ms-transition: all 2s ease;  
+    transition: all 2s ease;
+ }
+
+ .transform-active {
+     height: 70px;
+     width: 70px;
  }
 
