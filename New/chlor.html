@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chlor.css">
+    <title>Color Palette Tester</title>
+</head>
+<body>
+    <div id ="container">
+        <div class="header1">
+            <h1>RBG Background Color Test</h1>
+        </div>
+        <div class="top" id="top">
+            <div class="rgbpalette">
+                RBG: <input type="text" id="box" value="rgb(255,255,255)">
+                Red: <input type="range" id="red" value="255" min="0" max="255">
+                Green: <input type="range" id="green" value="255" min="0" max="255">
+                Blue: <input type="range" id="blue" value="255" min="0" max="255">
+            </div>
+        </div>
+        <div class="header1">
+            <h1>My Color Palette</h1>
+        </div>        
+        <div class="listOfBtns">
+            <div class="clr-01 transform" data-hue="355" data-sat="93"  data-lum="46.5"></div>
+            <div class="clr-02 transform" data-hue="19" data-sat="87" data-lum="50"></div>
+            <div class="clr-03 transform" data-hue="42" data-sat="93" data-lum="50"></div>
+            <div class="clr-04 transform" data-hue="55" data-sat="100" data-lum="53"></div>
+            <div class="clr-05 transform" data-hue="65" data-sat="100" data-lum="43"></div>
+            <div class="clr-06 transform" data-hue="131" data-sat="93" data-lum="37"></div>
+            <div class="clr-07 transform" data-hue="156" data-sat="100" data-lum="50"></div>
+            <div class="clr-08 transform" data-hue="198" data-sat="100" data-lum="48"></div>
+            <div class="clr-09 transform" data-hue="202" data-sat="100" data-lum="41"></div>
+            <div class="clr-16 transform" data-hue="229" data-sat="69" data-lum="36"></div>
+            <div class="clr-10 transform" data-hue="259" data-sat="72" data-lum="40"></div>
+            <div class="clr-11 transform" data-hue="287" data-sat="72" data-lum="40"></div>
+            <div class="clr-12 transform" data-hue="327" data-sat="82" data-lum="47"></div>
+            <div class="clr-13 transform" data-hue="15" data-sat="45" data-lum="24"></div>
+            <div class="clr-14 transform" data-hue="126" data-sat="0" data-lum="30"></div>
+            <div class="clr-15 transform" data-hue="197" data-sat="36" data-lum="27"></div>
+        </div>
+        <div class="colorList">
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+            <div class="colorSample" onclick="copy(this)"></div>
+        </div>
+        <div class="bottomarea">
+            <p>Click to Copy the hsl</p>
+        </div>        
+        <div class="bottomarea">
+            <p>Coming soon....</p>
+        </div>
+            
+    </div>
+    
+<script type="text/javascript">
+function myColor(){
+    var red = document.getElementById('red').value;
+    var green = document.getElementById('green').value;
+    var blue = document.getElementById('blue').value;
+    var color = 'rgb('+ red +','+ green +','+ blue +')';
+    
+    // document.body.style.backgroundColor = color;
+    document.getElementById('top').style.backgroundColor = color;
+    document.getElementById('box').value = color;
+}
+document.getElementById('red').addEventListener('input', myColor);
+document.getElementById('green').addEventListener('input', myColor);
+document.getElementById('blue').addEventListener('input', myColor);
+</script>
+
+<script> 
+var holdlum = 95;
+function sample(event){
+    // console.log(event);
+    // console.log(`event.dataset.hue ${event.target.dataset.hue}`);
+    let clr = event.target.dataset.hue;
+    let sat = event.target.dataset.sat;
+    // console.log(`clr: $[clr]`);
+    let colorList = document.querySelectorAll('.colorSample');
+    // console.log(colorList);
+    colorList.forEach(elem => { 
+        elem.style = `background-color: hsl(${clr}, ${sat}%, ${holdlum}%);`;
+        elem.innerHTML = `hsl(${sat}, ${sat}%, ${holdlum}%)`
+        holdlum -= 6;
+        if(holdlum < 1) {holdlum = 95;}
+    });
+    holdlum = 95;
+}
+
+function addEvent(){
+    let colorBtns = document.querySelectorAll('[class|="clr"]');
+    // console.log(colorBtns);
+    colorBtns.forEach(btn =>{
+        let hue = btn.dataset.hue;
+        let sat = btn.dataset.sat;
+        let lum = btn.dataset.lum;
+        btn.style = `background-color: hsl(${hue}, ${sat}%, ${lum}%);`;
+        btn.addEventListener('click', sample);
+    });
+}
+window.addEventListener('load', () =>{
+    addEvent();
+});    
+</script>
+</body>
+</html>
