@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="color.css">
+    <title>Color Palette Tester</title>
+</head>
+<body>
+    <div id ="container">
+        <div class="header1">
+            <h1>RBG Background Color Test</h1>
+        </div>
+        <div class="top" id="top">
+            <div class="rgbpalette">
+                RBG: <input type="text" id="box" value="rgb(255,255,255)">
+                Red: <input type="range" id="red" value="255" min="0" max="255">
+                Green: <input type="range" id="green" value="255" min="0" max="255">
+                Blue: <input type="range" id="blue" value="255" min="0" max="255">
+            </div>
+        </div>
+        <div class="header1">
+            <h1>My Color Palette</h1>
+        </div>
+        <div class="color-palette">
+            <div class="color-picker">
+                <div class="toparea">
+                    <input type="radio" name="color" id="red-2" onclick="changeColor()"/>
+                    <label for="red-2"><span class="red-2"></span></label>
+
+                    <input type="radio" name="color" id="orange" onclick="changeColor()"/>
+                    <label for="orange"><span class="orange"></span></label>
+
+                    <input type="radio" name="color" id="yellow" onclick="changeColor()"/>
+                    <label for="yellow"><span class="yellow"></span></label>
+
+                    <input type="radio" name="color" id="yellow-light" onclick="changeColor()"/>
+                    <label for="yellow-light"><span class="yellow-light"></span></label>
+
+                    <input type="radio" name="color" id="green-light" onclick="changeColor()"/>
+                    <label for="green-light"><span class="green-light"></span></label>
+
+                    <input type="radio" name="color" id="green-2" onclick="changeColor()"/>
+                    <label for="green-2"><span class="green-2"></span></label>
+
+                    <input type="radio" name="color" id="teal" onclick="changeColor()"/>
+                    <label for="teal"><span class="teal"></span></label>
+
+                    <input type="radio" name="color" id="blue-light" onclick="changeColor()"/>
+                    <label for="blue-light"><span class="blue-light"></span></label>
+
+                    <input type="radio" name="color" id="blue-2" onclick="changeColor()"/>
+                    <label for="blue-2"><span class="blue-2"></span></label>
+
+                    <input type="radio" name="color" id="indigo" onclick="changeColor()"/>
+                    <label for="indigo"><span class="indigo"></span></label>
+
+                    <input type="radio" name="color" id="violet" onclick="changeColor()"/>
+                    <label for="violet"><span class="violet"></span></label>
+
+                    <input type="radio" name="color" id="purple" onclick="changeColor()"/>
+                    <label for="purple"><span class="purple"></span></label>
+
+                    <input type="radio" name="color" id="pink" onclick="changeColor()"/>
+                    <label for="pink"><span class="pink"></span></label>
+
+                    <input type="radio" name="color" id="brown" onclick="changeColor()"/>
+                    <label for="brown"><span class="brown"></span></label>
+
+                    <input type="radio" name="color" id="grey" onclick="changeColor()"/>
+                    <label for="grey"><span class="grey"></span></label>
+
+                    <input type="radio" name="color" id="grey-blue" onclick="changeColor()"/>
+                    <label for="grey-blue"><span class="grey-blue"></span></label>
+
+
+                </div>
+                <div class="midarea">
+                    <table style="width: 83vw; height: 20em;">
+                        <!-- <colgroup>
+                            <col span="1" id="c1" style="background-color: #FFEBEE">
+                            <col span="1" id="c2" style="background-color: #FFCDD2">
+                            <col span="1" id="c3" style="background-color: #EF9A9A">
+                            <col span="1" id="c4" style="background-color: #E57373">
+                            <col span="1" id="c5" style="background-color: #EF5350">
+                            <col span="1" id="c6" style="background-color: #F44336">
+                            <col span="1" id="c7" style="background-color: #E53935">
+                            <col span="1" id="c8" style="background-color: #D32F2F">
+                            <col span="1" id="c9" style="background-color: #C62828">
+                            <col span="1" id="c10" style="background-color:#B71C1C">
+                        </colgroup> -->
+                        <tr>                                          
+                            <th id="t1"></th>     
+                            <th id="t2"></th>
+                            <th id="t3"></th>
+                            <th id="t4"></th>
+                            <th id="t5"></th>
+                            <th id="t6"></th>
+                            <th id="t7"></th>
+                            <th id="t8"></th>
+                            <th id="t9"></th>
+                            <th id="t10"></th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="bottomarea">
+                    <p>Coming soon....</p>
+                </div>
+
+            </div>     
+        </div>
+            
+    </div>
+    
+    <script type="text/javascript">
+        function myColor(){
+            var red = document.getElementById('red').value;
+            var green = document.getElementById('green').value;
+            var blue = document.getElementById('blue').value;
+            var color = 'rgb('+ red +','+ green +','+ blue +')';
+            
+            // document.body.style.backgroundColor = color;
+            document.getElementById('top').style.backgroundColor = color;
+            document.getElementById('box').value = color;
+        }
+        document.getElementById('red').addEventListener('input', myColor);
+        document.getElementById('green').addEventListener('input', myColor);
+        document.getElementById('blue').addEventListener('input', myColor);
+
+        function changeColor(){
+
+            // var column = document.querySelector('th');
+            // column.style = "background: #FFEBEE";
+
+            if(document.getElementById("red-2").checked){
+                document.getElementById("t1").style.backgroundColor="#FFEBEE";
+                document.getElementById("t2").style.backgroundColor="#FFCDD2";
+                document.getElementById("t3").style.backgroundColor="#EF9A9A";
+                document.getElementById("t4").style.backgroundColor="#E57373";
+                document.getElementById("t5").style.backgroundColor="#EF5350";
+                document.getElementById("t6").style.backgroundColor="#F44336";
+                document.getElementById("t7").style.backgroundColor="#E53935";
+                document.getElementById("t8").style.backgroundColor="#D32F2F";
+                document.getElementById("t9").style.backgroundColor="#C62828";
+                document.getElementById("t10").style.backgroundColor="#B71C1C";
+            }
+
+            if(document.getElementById("orange").checked){
+                document.getElementById("t1").style.backgroundColor="#FBE9E7";
+                document.getElementById("t2").style.backgroundColor="#FFCCBC";
+                document.getElementById("t3").style.backgroundColor="#FFAB91";
+                document.getElementById("t4").style.backgroundColor="#FF8A65";
+                document.getElementById("t5").style.backgroundColor="#FF7043";
+                document.getElementById("t6").style.backgroundColor="#FF5722";
+                document.getElementById("t7").style.backgroundColor="#F4511E";
+                document.getElementById("t8").style.backgroundColor="#E64A19";
+                document.getElementById("t9").style.backgroundColor="#D84315";
+                document.getElementById("t10").style.backgroundColor="#BF360C";
+            }
+
+            if(document.getElementById("yellow").checked){
+                document.getElementById("t1").style.backgroundColor="#FFF3E0";
+                document.getElementById("t2").style.backgroundColor="#FFE0B2";
+                document.getElementById("t3").style.backgroundColor="#FFCC80";
+                document.getElementById("t4").style.backgroundColor="#FFB74D";
+                document.getElementById("t5").style.backgroundColor="#FFA726";
+                document.getElementById("t6").style.backgroundColor="#FF9800";
+                document.getElementById("t7").style.backgroundColor="#FB8C00";
+                document.getElementById("t8").style.backgroundColor="#F57C00";
+                document.getElementById("t9").style.backgroundColor="#EF6C00";
+                document.getElementById("t10").style.backgroundColor="#E65100";
+            }
+
+            if(document.getElementById("yellow-light").checked){
+                document.getElementById("t1").style.backgroundColor="#FFFDE7";
+                document.getElementById("t2").style.backgroundColor="#FFF9C4";
+                document.getElementById("t3").style.backgroundColor="#FFF59D";
+                document.getElementById("t4").style.backgroundColor="#FFF176";
+                document.getElementById("t5").style.backgroundColor="#FFEE58";
+                document.getElementById("t6").style.backgroundColor="#FFEB3B";
+                document.getElementById("t7").style.backgroundColor="#FDD835";
+                document.getElementById("t8").style.backgroundColor="#FBC02D";
+                document.getElementById("t9").style.backgroundColor="#F9A825";
+                document.getElementById("t10").style.backgroundColor="#F57F17";
+            }
+
+            if(document.getElementById("green-light").checked){
+                document.getElementById("t1").style.backgroundColor="#F9FBE7";
+                document.getElementById("t2").style.backgroundColor="#F0F4C3";
+                document.getElementById("t3").style.backgroundColor="#E6EE9C";
+                document.getElementById("t4").style.backgroundColor="#DCE775";
+                document.getElementById("t5").style.backgroundColor="#D4E157";
+                document.getElementById("t6").style.backgroundColor="#CDDC39";
+                document.getElementById("t7").style.backgroundColor="#C0CA33";
+                document.getElementById("t8").style.backgroundColor="#AFB42B";
+                document.getElementById("t9").style.backgroundColor="#9E9D24";
+                document.getElementById("t10").style.backgroundColor="#827717";
+            }
+            
+        } 
+    </script>
+</body>
+</html>
